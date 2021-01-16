@@ -3,8 +3,8 @@ import cv2
 
 faceCascade = cv2.CascadeClassifier('data/haarcascades/haarcascade_frontalface_default.xml')
 cap = cv2.VideoCapture(0)
-cap.set(3,640) # set Width
-cap.set(4,480) # set Height
+cap.set(3,320) # set Width (640)
+cap.set(4,240) # set Height (480)
 
 while True:
     ret, img = cap.read()
@@ -12,9 +12,9 @@ while True:
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     faces = faceCascade.detectMultiScale(
         gray,     
-        scaleFactor=1.2,
-        minNeighbors=5,     
-        minSize=(20, 20)
+        scaleFactor=1.1, # 1.2
+        minNeighbors=7,  # 5   
+        minSize=(30, 30)  # (20,20)
     )
     for (x,y,w,h) in faces:
         cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
