@@ -7,8 +7,8 @@ Developed by Marcelo Rovai - MJRoBot.org @ 21Feb18
 '''
 
 import cv2
-import numpy as np
-import os
+# import numpy as np
+# import os
 
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 recognizer.read('trainer/trainer.yml')
@@ -21,7 +21,7 @@ font = cv2.FONT_HERSHEY_SIMPLEX
 id = 0
 
 # names related to ids: example ==> Marcelo: id=1,  etc
-names = ['None', 'desmond', 'unknown', 'Ilza', 'Z', 'W']
+names = ['None', 'Desmond', 'Ethan', 'Elyn', 'Elaine', 'Bean']
 
 # Initialize and start realtime video capture
 cam = cv2.VideoCapture(0)
@@ -41,8 +41,8 @@ while True:
 
     faces = faceCascade.detectMultiScale(
         gray,
-        scaleFactor=1.1,
-        minNeighbors=7,
+        scaleFactor=1.3,
+        minNeighbors=5,
         minSize=(int(minW), int(minH)),
     )
 
