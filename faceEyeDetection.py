@@ -21,8 +21,8 @@ while True:
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     faces = faceCascade.detectMultiScale(
         gray,
-        scaleFactor=1.3,  # (1.3)
-        minNeighbors=5,  # (5)
+        scaleFactor=1.1,  # (1.3)
+        minNeighbors=7,  # (5)
         minSize=(25, 25)
     )
 
